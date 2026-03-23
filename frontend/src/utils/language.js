@@ -320,7 +320,7 @@ export function registerBalaLang(monaco) {
 }
 
 // API calls
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = 'https://balalang.onrender.com/api';
 
 export async function executeCode(code) {
   try {
