@@ -1,4 +1,4 @@
-# BalaLang IDE: Coding in Hinglish! 🚀🌑✨
+# BalaLang IDE: Coding in Hinglish! 
 
 Hey! This is **BalaLang** — a personal project I built because I wanted a coding environment that felt more... "desi". It's a full-stack IDE that lets you write logic using **Hinglish** keywords (like `agar`, `bol`, `kaam`, etc.) and runs them instantly using Python under the hood.
 
@@ -44,7 +44,7 @@ Built the whole thing with **React** and **Vite** for that lightning-fast HMR. T
 
 ---
 
-## 🚀 Run it Locally
+## Run it Locally
 
 If you want to play with the code:
 
@@ -57,4 +57,4 @@ Honestly? For the fun of it. Coding can feel stiff sometimes, and adding a bit o
 
 ---
 
-**Made with 🌑 and ☕ by a developer who loves Hinglish.** 🌒🚀🌆
+**Made with love by Balajee.** 
