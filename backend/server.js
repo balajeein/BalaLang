@@ -14,10 +14,15 @@ const io = new Server(server, {
   }
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// ✅ Root route (for testing)
+app.get("/", (req, res) => {
+  res.send("Backend is running ");
+});
 
 // Health check
 app.get('/api/health', (req, res) => {
