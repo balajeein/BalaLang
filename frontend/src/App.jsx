@@ -48,9 +48,24 @@ function App() {
 
 
   // File System State (in-memory fake fs)
-  const [files, setFiles] = useState([
-    { id: 'main.bhai', name: 'main.bhai', content: DEFAULT_CODE }
-  ]);
+  const [files, setFiles] = useState(() => {
+    const saved = localStorage.getItem('balalang_files');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error("Failed to load saved files:", e);
+      }
+    }
+    return [
+      { id: 'main.bhai', name: 'main.bhai', content: DEFAULT_CODE }
+    ];
+  });
+
+  // Persist files to localStorage on every change
+  useEffect(() => {
+    localStorage.setItem('balalang_files', JSON.stringify(files));
+  }, [files]);
 
   // Derived state
   const activeFileObj = files.find(f => f.id === activeFile);
