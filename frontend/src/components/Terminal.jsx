@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { X, ChevronUp, Trash2, Terminal as TerminalIcon } from 'lucide-react';
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = 'http://127.0.0.1:3001';
+const SOCKET_URL = "https://balalang.onrender.com";
 
 export function Terminal({ isCollapsed, toggleTerminal, clearOutput, setTerminalSocket }) {
   const [lines, setLines] = useState([
@@ -15,7 +15,9 @@ export function Terminal({ isCollapsed, toggleTerminal, clearOutput, setTerminal
 
   // Initialize Socket.io
   useEffect(() => {
-    const newSocket = io(SOCKET_URL);
+    const newSocket = io(SOCKET_URL, {
+      transports: ["websocket"]
+    });
     setSocket(newSocket);
     setTerminalSocket(newSocket);
 

@@ -334,7 +334,7 @@ export async function executeCode(code) {
     return {
       success: false,
       output: '',
-      error: 'bhai server se connection nahi ho raha 😵\nMake sure backend is running on port 3001',
+      error: 'bhai server se connection nahi ho raha 😵\nMake sure backend is running ',
     };
   }
 }
