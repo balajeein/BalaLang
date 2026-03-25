@@ -9,19 +9,23 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
+    origin: "https://balalang.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://balalang.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 
 // ✅ Root route (for testing)
 app.get("/", (req, res) => {
-  res.send("Backend is running ");
+  res.send("Backend is running");
 });
 
 // Health check

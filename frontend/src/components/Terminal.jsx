@@ -16,7 +16,10 @@ export function Terminal({ isCollapsed, toggleTerminal, clearOutput, setTerminal
   // Initialize Socket.io
   useEffect(() => {
     const newSocket = io(SOCKET_URL, {
-      transports: ["websocket"]
+      transports: ["polling", "websocket"],
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 2000
     });
     setSocket(newSocket);
     setTerminalSocket(newSocket);
